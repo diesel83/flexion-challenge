@@ -1,0 +1,10 @@
+- Create GCP account
+- Create Service Account
+- Create Project
+- Enable APIs
+  - compute
+  - k8s
+  - artifact
+  - 
+- Create VPC
+- Create subnets
