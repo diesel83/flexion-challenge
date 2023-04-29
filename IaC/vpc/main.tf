@@ -4,12 +4,12 @@ resource "google_compute_network" "vpc_flexion" {
 }
 
 resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" {
-  name          = "node-subnet"
-  ip_cidr_range = "10.2.0.0/16"
-  region        = "us-central1"
+  name          = var.node_network
+  ip_cidr_range = var.node_cidr
+  region        = var.compute_region
   network       = google_compute_network.vpc_flexion.id
   secondary_ip_range {
-    range_name    = "pod-cidr"
-    ip_cidr_range = "192.168.10.0/24"
+    range_name    = var.secondary_subnet_name
+    ip_cidr_range = var.secondary_cidr
   }
 }

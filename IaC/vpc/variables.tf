@@ -21,3 +21,27 @@ variable "vpc_name" {
   type = string
   default = "vpc-flexion"
 }
+
+variable "node_network" {
+  description = "node network name"
+  type = string
+  default = "node-network"
+  
+}
+variable "node_cidr" {
+  description = "node cidr range"
+  type = string
+  default = "10.2.0.0/16"
+}
+
+variable "secondary_subnet_name" {
+  description = "name of subnet"
+  type = string
+  default = "secondary"
+}
+
+variable "secondary_cidr" {
+  description = "secondary cidr block"
+  type = string
+  default = "192.168.10.0/24"
+}
