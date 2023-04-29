@@ -14,6 +14,10 @@ resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" 
     range_name    = var.secondary_subnet_name
     ip_cidr_range = var.secondary_cidr
   }
+  secondary_ip_range {
+    range_name    = var.pod_subnet_name
+    ip_cidr_range = var.pod_cidr
+  }
 }
 
 resource "google_compute_router" "flexion-router" {

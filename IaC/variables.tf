@@ -46,6 +46,19 @@ variable "secondary_cidr" {
   default     = "192.168.10.0/24"
 }
 
+variable "pod_subnet_name" {
+  description = "pod subnet"
+  type        = string
+  default     = "pod-subnet"
+}
+
+variable "pod_cidr" {
+  description = "pod cidr"
+  type        = string
+  default     = "192.168.64.0/22"
+
+}
+
 variable "flexion_router_name" {
   description = "router name"
   type        = string
