@@ -48,12 +48,12 @@ variable "secondary_cidr" {
 
 variable "flexion_router_name" {
   description = "router name"
-  type = string
-  default = "flexion-router"
+  type        = string
+  default     = "flexion-router"
 }
 
 variable "flexion_nat_name" {
   description = "nat name"
-  type = string
-  default = "flexion-nat"
+  type        = string
+  default     = "flexion-nat"
 }
