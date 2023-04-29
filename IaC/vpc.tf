@@ -11,8 +11,8 @@ resource "google_compute_subnetwork" "network-with-private-secondary-ip-ranges" 
   region        = var.compute_region
   network       = google_compute_network.vpc_flexion.id
   secondary_ip_range {
-    range_name    = var.secondary_subnet_name
-    ip_cidr_range = var.secondary_cidr
+    range_name    = var.services_subnet_name
+    ip_cidr_range = var.services_cidr
   }
   secondary_ip_range {
     range_name    = var.pod_subnet_name
@@ -59,7 +59,7 @@ resource "google_compute_firewall" "allow-internal" {
     protocol = "udp"
     ports    = ["0-65535"]
   }
-  source_ranges = ["10.2.0.0/16"]
+  source_ranges = ["192.168.0.0/20"]
 
 }
 resource "google_compute_firewall" "allow-ssh" {
