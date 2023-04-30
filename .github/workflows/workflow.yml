@@ -90,6 +90,6 @@ jobs:
 
     - name: Deploy
       run: |-
-        kubectl -n flexion set image deploy flexion-app gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
+        kubectl -n flexion set image deploy flexion-app=gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA
         kubectl -n flexion rollout status deployment flexion-app
         kubectl get services -o wide
