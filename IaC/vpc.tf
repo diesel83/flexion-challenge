@@ -73,5 +73,16 @@ resource "google_compute_firewall" "allow-ssh" {
   source_ranges = ["35.235.240.0/20"]
 }
 
+resource "google_compute_firewall" "allow-health-check" {
+  name          = "l7-lb"
+  direction     = "INGRESS"
+  network       = google_compute_network.vpc_flexion.id
+  source_ranges = ["130.211.0.0/22", "35.191.0.0/16"]
+  allow {
+    protocol = "tcp"
+    ports    = ["80", "8080"]
+  }
+}
+
 
 

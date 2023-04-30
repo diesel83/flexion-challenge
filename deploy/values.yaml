@@ -1,0 +1,3 @@
+APP_NAME: "flexion-app"
+REPLICA_COUNT: 1
+IMAGE: "gcr.io/sanguine-link-385022/flexion-app:v1"
