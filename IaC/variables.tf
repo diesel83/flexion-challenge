@@ -37,7 +37,7 @@ variable "node_cidr" {
 variable "services_subnet_name" {
   description = "services subnet"
   type        = string
-  default     = "secondary"
+  default     = "services-subnet"
 }
 
 variable "services_cidr" {
