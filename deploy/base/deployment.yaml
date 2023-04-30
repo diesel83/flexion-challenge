@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flexion-app
+  namespace: flexion
+  labels:
+    app: flexion-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flexion-app
+  template:
+    metadata:
+      labels:
+        app: flexion-app
+    spec:
+      containers:
+      - name: flexion-app
+        image: gcr.io/sanguine-link-385022/flexion-app:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
+          protocol: TCP
