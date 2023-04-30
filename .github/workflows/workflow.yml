@@ -52,13 +52,13 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v1'
       with:
-        credentials_json: '${{ secrets.gcp_credentials }}'
+        credentials_json: '${{ secrets.GKE_SA_KEY }}'
 
     - id: 'get-credentials'
       uses: 'google-github-actions/get-gke-credentials@v1'
       with:
-        cluster_name: ${{ env.GKE_CLUSTER }}
-        location: ${{ env.GKE_REGION }}
+        cluster_name: "${{ env.GKE_CLUSTER }}"
+        location: "${{ env.GKE_REGION }}"
         
     # Build the Docker image
     - name: Build
