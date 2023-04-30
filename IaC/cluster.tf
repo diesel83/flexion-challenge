@@ -12,8 +12,8 @@ resource "google_container_cluster" "flexion-cluster" {
   initial_node_count = var.initial_default_node_pool_count
 
   ip_allocation_policy {
-    cluster_secondary_range_name  = var.services_subnet_name
-    services_secondary_range_name = var.pod_subnet_name
+    cluster_secondary_range_name  = var.pod_subnet_name
+    services_secondary_range_name = var.services_subnet_name
   }
 
   location = var.compute_region
